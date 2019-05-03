@@ -10,17 +10,6 @@
     - "service_mgr_{{ ansible_service_mgr | mandatory }}.yml"
     - service_mgr_default.yml
 
-- debug:
-    msg:
-      - "_apache_service_start_command"
-      - "{{ _apache_service_start_command }}"
-      - "_apache_service_stop_command"
-      - "{{ _apache_service_stop_command }}"
-      - "_apache_service_status_command"
-      - "{{ _apache_service_status_command }}"
-      - "_apache_service_name"
-      - "{{ _apache_service_name }}"
-
 - include_tasks: start_apache.yml
   when: apache_service_state == 'started'
 
