@@ -8,7 +8,7 @@
 - name: Stop Apache (restricted).
   block:
     - name: Retrieve Apache status (restricted).
-      raw: "{{ apache_service_status_command }}"
+      raw: "{{ _apache_service_status_command }}"
       changed_when: false
       failed_when:
         - _apache_status_result.rc != 0
@@ -16,7 +16,7 @@
       register: _apache_status_result
 
     - name: Stop Apache (restricted).
-      raw: "{{ apache_service_stop_command }}"
+      raw: "{{ _apache_service_stop_command }}"
       when: _apache_status_result.rc == 0
 
   when: apache_service_restricted_mode
