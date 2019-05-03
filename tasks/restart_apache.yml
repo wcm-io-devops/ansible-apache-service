@@ -1,0 +1,2 @@
+- include_tasks: stop_apache.yml
+- include_tasks: start_apache.yml

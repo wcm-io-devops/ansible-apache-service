@@ -1,0 +1,13 @@
+- name: Include service manager specific variables.
+  include_vars: "{{ item }}"
+  with_first_found:
+    - service_mgr_default.yml
+
+- include_tasks: start_apache.yml
+  when: apache_service_state == 'started'
+
+- include_tasks: stop_apache.yml
+  when: apache_service_state == 'stopped'
+
+- include_tasks: restart_apache.yml
+  when: apache_service_state == 'restarted'

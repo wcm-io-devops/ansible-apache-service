@@ -1,0 +1,22 @@
+- name: Start Apache (escalated).
+  service:
+    name: "{{ apache_service_name }}"
+    state: started
+  register: apache_service_start_result
+  when: not apache_service_restricted_mode
+
+- name: Start Apache (restricted).
+  block:
+    - name: Retrieve apache status (restricted).
+      raw: "{{ apache_service_status_command }}"
+      changed_when: false
+      failed_when:
+        - _apache_status_result.rc != 0
+        - _apache_status_result.rc != 3
+      register: _apache_status_result
+
+    - name: Start Apache (restricted).
+      raw: "{{ apache_service_start_command }}"
+      when: _apache_status_result.rc != 0
+
+  when: apache_service_restricted_mode

@@ -1,0 +1,2 @@
+- name: restart apache
+  include_tasks: restart_apache.yml

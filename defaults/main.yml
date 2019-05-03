@@ -1,0 +1,3 @@
+apache_service_restricted_mode: false
+apache_service_state: started
+apache_service_name: apache2
