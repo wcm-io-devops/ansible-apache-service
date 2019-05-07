@@ -18,5 +18,18 @@
     - name: Start Apache (restricted).
       raw: "{{ _apache_service_start_command }}"
       when: _apache_status_result.rc != 0
+      register: _apache_start_result
+
+    - name: Ensure that Apache is started (restricted).
+      raw: "{{ _apache_service_status_command }}"
+      changed_when: false
+      failed_when:
+        - _apache_status_result.rc != 0
+      when: _apache_start_result.changed
+
+    - debug:
+        msg:
+          - "_apache_start_result"
+          - "{{ _apache_start_result | default('not found') }}"
 
   when: apache_service_restricted_mode

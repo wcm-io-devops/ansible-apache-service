@@ -18,5 +18,11 @@
     - name: Stop Apache (restricted).
       raw: "{{ _apache_service_stop_command }}"
       when: _apache_status_result.rc == 0
+      register: _apache_stop_result
+
+    - debug:
+        msg:
+          - "_apache_stop_result"
+          - "{{ _apache_stop_result | default('not found') }}"
 
   when: apache_service_restricted_mode
