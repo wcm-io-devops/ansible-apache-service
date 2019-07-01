@@ -1,2 +1,18 @@
+# Enables / disables the restricted mode to work with customized commands like sudo
 apache_service_restricted_mode: false
+
+# Desired state of the service
 apache_service_state: started
+
+# The name of the service to be controlled (OS family related)
+# apache_service_name:
+
+# Overwrites the default (service manager related) start command
+# apache_service_start_command:
+
+# Overwrites the default (service manager related) stop command
+# apache_service_stop_command:
+
+# Overwrites the default (service manager related) status command
+# apache_service_status_command:
+

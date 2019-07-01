@@ -1,6 +1,6 @@
 - name: Stop Apache (escalated).
   service:
-    name: "{{ apache_service_name }}"
+    name: "{{ _apache_service_name }}"
     state: stopped
   register: apache_service_stop_result
   when: not apache_service_restricted_mode
@@ -19,10 +19,5 @@
       raw: "{{ _apache_service_stop_command }}"
       when: _apache_status_result.rc == 0
       register: _apache_stop_result
-
-    - debug:
-        msg:
-          - "_apache_stop_result"
-          - "{{ _apache_stop_result | default('not found') }}"
 
   when: apache_service_restricted_mode
