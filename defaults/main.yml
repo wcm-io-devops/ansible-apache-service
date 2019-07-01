@@ -15,4 +15,3 @@ apache_service_state: started
 
 # Overwrites the default (service manager related) status command
 # apache_service_status_command:
-
