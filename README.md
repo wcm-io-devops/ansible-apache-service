@@ -22,7 +22,7 @@ Enables / disables the restricted mode to work with customized commands like sud
 
     apache_service_state: started
 
-Desired state of the service.
+# Desired state of the service. Possible values: started, stopped, restarted, noop.
 
     # apache_service_name:
 

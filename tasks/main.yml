@@ -18,3 +18,6 @@
 
 - include_tasks: restart_apache.yml
   when: apache_service_state == 'restarted'
+
+- include_tasks: noop.yml
+  when: apache_service_state == 'noop'

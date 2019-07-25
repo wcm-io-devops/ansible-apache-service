@@ -1,7 +1,7 @@
 # Enables / disables the restricted mode to work with customized commands like sudo
 apache_service_restricted_mode: false
 
-# Desired state of the service
+# Desired state of the service, possible values: started, stopped, restarted, noop
 apache_service_state: started
 
 # The name of the service to be controlled (OS family related)
