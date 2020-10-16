@@ -7,7 +7,7 @@ the appropriate privilege escalation rights and has to work with e.g.
 
 ## Requirements
 
-This role requires Ansible 2.4 or higher and works with Apache 2.2 or
+This role requires Ansible 2.7 or higher and works with Apache 2.2 or
 higher. The role requires an Apache service that can be controlled with
 the Ansible `service` module to be installed on the target machine when
 not running in restricted mode.
