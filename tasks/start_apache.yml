@@ -1,3 +1,4 @@
+---
 - name: Start Apache (escalated).
   service:
     name: "{{ _apache_service_name }}"

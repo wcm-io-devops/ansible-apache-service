@@ -1,3 +1,4 @@
+---
 # Enables / disables the restricted mode to work with customized commands like sudo
 apache_service_restricted_mode: false
 

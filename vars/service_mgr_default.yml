@@ -1,3 +1,4 @@
+---
 _apache_service_start_command: "{{ apache_service_start_command | default('sudo -n /etc/init.d/'+_apache_service_name+' start') }}"
 _apache_service_stop_command: "{{ apache_service_stop_command | default('sudo -n /etc/init.d/'+_apache_service_name+' stop') }}"
 _apache_service_status_command: "{{ apache_service_status_command | default('sudo -n /etc/init.d/'+_apache_service_name+' status') }}"
