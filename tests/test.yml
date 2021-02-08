@@ -1,4 +1,5 @@
+---
 - name: test role syntax
   hosts: test
   roles:
-    - ansible-apache-service
+    - wcm_io_devops.apache_service

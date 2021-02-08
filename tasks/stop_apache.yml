@@ -1,3 +1,4 @@
+---
 - name: Stop Apache (escalated).
   service:
     name: "{{ _apache_service_name }}"
