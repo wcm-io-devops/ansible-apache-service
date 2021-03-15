@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: apache_service
+  namespace: wcm_io_devops
   author: Tobias Richter
   description: Controls Apache service on Linux
   company: pro!vision
